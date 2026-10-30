@@ -258,6 +258,8 @@ namespace PathDrift
             _btnStart.Enabled = true;
         }
 
+        // HTTP mode exists because many accelerator IPs block ICMP at the edge;
+        // a HEAD request on port 80 still measures real path latency.
         private void OnTick(object state)
         {
             bool http = _chkHttp.Checked;
